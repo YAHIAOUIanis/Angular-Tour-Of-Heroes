@@ -1,0 +1,11 @@
+<!--Le seul affiche la zone de messages s'il y a des messages à afficher. *ngIf -->
+<div *ngIf="messageService.messages.length">
+
+    <h2>Messages</h2>
+    <!--Une liaison d'événement angulaire lie l'événemet de clic du bouton à MessageService.clear()-->
+    <button class="clear"                
+            (click)="messageService.clear()">clear</button>
+    <!--la liste des messsages en éléments répétés. *ngFor-->
+    <div *ngFor='let message of messageService.messages'> {{message}}</div>
+    
+</div>
